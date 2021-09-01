@@ -29,4 +29,14 @@ class Triangulo {
             else{
                 lado =  "Escaleno";
             }
+                
+            
+            public void paint (Graphics g) {
+                Graphics2D g2d = (Graphics2D) g;
+                g2d.drawLine(this.x1,this.x2);
+                g2d.drawLine(this.x2,this.x3); 
+                g2d.drawLine(this.x3,this.x1);     
+            }
         }
+        
+        
