@@ -4,10 +4,10 @@ import java.awt.*;
 
 
 public class Rect{
-	int x, y;
-	int w, h;
-	int rC, gC, bC;
-	int rF, gF, bF;
+	private int x, y;
+	private int w, h;
+	private int rC, gC, bC;
+	private int rF, gF, bF;
 	public Rect (int x, int y, int w, int h, int rC, int gC, int bC, int rF, int gF, int bF){
 		this.x = x;
 		this.y = y;
