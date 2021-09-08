@@ -1,41 +1,28 @@
+package figures;
+
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
 
-import figures.*;
 
-class PackApp{
-	public static void main (String[] args){
-		PackFrame frame = new PackFrame();
-		frame.setVisible(true);
-	}
-}
-
-class PackFrame extends JFrame{
-	Rect r1;
-	Ellipse e1;
-	Triangulo t1;
-	public PackFrame (){
-		this.addWindowListener(
-			new WindowAdapter(){
-				public void windowClosing (WindowEvent e){
-					System.exit(0);
-				}
-			}
-		);
-		
-		this.setTitle("Java Packages");
-		this.setSize(350,350);
-		this.r1 = new Rect(50,50,100,30);
-		this.e1 = new Ellipse(50,100,100,30);
-		this.t1 = new Triangulo(20,40,20,80,40,80);
+public class Rect{
+	int x, y;
+	int w, h;
+	int rC, gC, bC;
+	int rF, gF, bF;
+	public Rect (int x, int y, int w, int h, int rC, int gC, int bC, int rF, int gF, int bF){
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		this.h = h;
+		this.rC = rC; this.gC = gC; this.bC = bC; // cores RGB do conrtorno
+		this.rF = rF; this.gF = gF; this.bF = bF; //cores RGB do fundo
 	}
 	
-	public void paint (Graphics g){
-		super.paint(g);
-		this.r1.paint(g);
-		this.e1.paint(g);
-		this.t1.paint(g);
+	public void paint (Graphics g) {
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.setColor(new Color(this.rC, this.gC, this.bC));
+		g2d.fillRect(this.x,this.y,this.w,this.h);
+		g2d.setColor(new Color(this.rF, this.gF, this.bF));
+		g2d.drawRect(this.x,this.y,this.w,this.h);
 
 	}
 }
