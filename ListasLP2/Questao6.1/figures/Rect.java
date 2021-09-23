@@ -4,7 +4,7 @@ import java.awt.*;
 
 
 public class Rect extends Figure{
-	
+	int rF, gF, bF;
 	public Rect (int x, int y, int w, int h, int rC, int gC, int bC, int rF, int gF, int bF){
 		this.x = x;
 		this.y = y;
