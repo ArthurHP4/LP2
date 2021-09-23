@@ -3,8 +3,16 @@ package figures;
 import java.awt.Graphics;
 
 public abstract class Figure {
-	int x, y;
-	int w, h;
-	int rC, gC, bC;
+
+	public int rC, gC, bC;
+	
+	public Figure (int rC, int gC, int bC) {
+		this.rC = rC;
+		this.gC = gC;
+		this.bC = bC;
+    }
+
     public abstract void paint (Graphics g);
+	
+	
 }
