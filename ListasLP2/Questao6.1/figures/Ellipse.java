@@ -5,15 +5,19 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Ellipse2D.Double;
 
 public class Ellipse extends Figure {
+	
+	int x,y;
+	int w, h;
 	int rF, gF, bF;
 
 	public Ellipse (int x, int y, int w, int h, int rC, int gC, int bC, int rF, int gF, int bF){
+		super(rC,gC,bC);
 		this.x = x;
 		this.y = y;
 		this.w = w;
 		this.h = h;
-		this.rC = rC; this.gC = gC; this.bC = bC; // cores RGB do conrtorno
 		this.rF = rF; this.gF = gF; this.bF = bF; //cores RGB do fundo
+	
 	}
 	
 
