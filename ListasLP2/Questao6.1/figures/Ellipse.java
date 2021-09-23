@@ -5,7 +5,8 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Ellipse2D.Double;
 
 public class Ellipse extends Figure {
-	
+	int rF, gF, bF;
+
 	public Ellipse (int x, int y, int w, int h, int rC, int gC, int bC, int rF, int gF, int bF){
 		this.x = x;
 		this.y = y;
