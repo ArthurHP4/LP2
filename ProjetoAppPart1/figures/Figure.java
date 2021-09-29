@@ -3,19 +3,28 @@ package figures;
 import java.awt.*;
 
 public abstract class Figure { 
-	int x, y;
-    Color cor1;
-	
-	public Figure (int x, int y, Color c1) {
+	public int x, y;
+	public int w,h;
+    public Color cor1;
+	public Color cor2;
+	public Figure (int x,int y,int w,int h,Color c1,Color c2) {
 		this.x = x;
-        this.y = y;       
+        this.y = y;
+        this.w = w;
+        this.h = h;    
 		cor1 = c1;
+		cor2 = c2;
 
     }
     
-    public void setColor(Color c1) {
+    public void setColor(Color c1, Color c2) {
     	cor1 = c1;
+		cor2 = c2;
     }
 	
     public abstract void paint (Graphics g);   
+	
+    public boolean clicked (int x, int y) {
+        return (this.x<=x && x<=this.x+this.w && this.y<=y && y<=this.y+this.h);
+    }
 }
