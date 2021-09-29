@@ -20,10 +20,5 @@ public class Triangulo extends Figure{
 	}
 
 	
-	public void contains(int x, int y) {
-		int xPoints[] = {this.x, ((this.w)/2) + (this.x), (this.w) + (this.x)};
-        int yPoints[] = {this.y + h, (this.y + h) - (this.h), this.y + h};
-		Polygon p = new Polygon(xPoints, yPoints, 3);
-	}
 	
 }

@@ -17,4 +17,3 @@ public class Line extends Figure {
   
 }
 
-
