@@ -30,16 +30,20 @@
   <br>
 
  Tecla para deletar a figura com foco ou a ultima figura da lista:
-
+ 
+ <ul>
   <li>Tecla "d";</li>
-
+ </ul>
+ 
  Tecla para adicionar figuras:
+ 
   <ul> 
     <li>Tecla "e" : para ellipes;</li>
     <li>Tecla "p" : para pentagono;</li>
     <li>Tecla "r" : para retangulo;</li>
     <li>Tecla "t" : para triangulo</li>
   </ul>
+  
 <h2> COMANDOS VIA MOUSE </h2>
 
 Clique esquerdo para selecionar figura e atribuir o foco;
