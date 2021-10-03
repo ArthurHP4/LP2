@@ -10,7 +10,9 @@
   Teclas para mudar a cor do fundo: 
 
   Tecla "4", "5", "6";
-  <br>
+   <ul>
+       <li> Tecla "4", "5", "6"; </li>
+  </ul>
 
   Teclas para movimentar a figura com foco:
 
