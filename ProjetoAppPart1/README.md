@@ -19,15 +19,17 @@
 
   Teclas de foco:
 
-  Tecla "Enter":  Para mudar o foco;
-  Tecla "C": para limpar(clean) o foco;
-  <br>
+   <ul>
+        <li>Tecla "Enter":  Para mudar o foco;</li>
+        <li>Tecla "C": para limpar(clean) o foco;</li>
+   </ul>
 
   Tecla para aumentar ou diminuir o tamanho da figura:
 
-  Tecla "+";
-  Tecla "-"; 
-  <br>
+   <ul>
+        <li>Tecla "+";</li>
+        <li>Tecla "-";</li>
+   </ul>
 
  Tecla para deletar a figura com foco ou a ultima figura da lista:
  
