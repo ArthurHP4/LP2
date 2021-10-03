@@ -35,11 +35,12 @@
   <br>
 
   Tecla para adicionar figuras:
-
-  Tecla "e" : para ellipes;
-  Tecla "p" : para pentagono;
-  Tecla "r" : para retangulo;
-  Tecla "t" : para triangulo;
+  <ul>
+    <li>Tecla "e" : para ellipes;</li>
+    <li>Tecla "p" : para pentagono;</li>
+    <li>Tecla "r" : para retangulo;</li>
+    <li>Tecla "t" : para triangulo</li>
+  </ul>
 <h2> COMANDOS VIA MOUSE </h2>
 
 Clique esquerdo para selecionar figura e atribuir o foco;
