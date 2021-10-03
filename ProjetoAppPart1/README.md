@@ -5,7 +5,7 @@
 
 Teclas para mudar a cor do contorno: 
 
-<Tecla "1" , "2", "3";
+Tecla "1" , "2", "3";
 <br>
 
 Teclas para mudar a cor do fundo: 
