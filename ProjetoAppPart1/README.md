@@ -14,8 +14,9 @@
 
   Teclas para movimentar a figura com foco:
 
-  Tecla  "⇦", "⇧", "⇨" "⇩"; 
-  <br>
+  <ul>
+       <li>Tecla  "⇦", "⇧", "⇨" "⇩"; </li>
+  </ul>
 
   Teclas de foco:
 
