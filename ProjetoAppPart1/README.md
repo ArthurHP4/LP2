@@ -1,5 +1,5 @@
 <h1> Manual de intrução para o uso do progama feito para o "Projeto 1/2" </h1>
-<div>
+<div style="margin-auto-0">
   <h2> COMANDOS VIA TECLADO </H2>
   <br>
 
