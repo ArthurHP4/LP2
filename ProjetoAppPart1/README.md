@@ -31,8 +31,7 @@
 
   Tecla para deletar a figura com foco ou a ultima figura da lista:
 
-  Tecla "d";
-  <br>
+  <li>Tecla "d";</li>
 
   Tecla para adicionar figuras:
   <ul>
