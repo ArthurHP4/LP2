@@ -33,8 +33,8 @@
 
   <li>Tecla "d";</li>
 
-  Tecla para adicionar figuras:
-  <ul>
+ 
+  <ul> Tecla para adicionar figuras:
     <li>Tecla "e" : para ellipes;</li>
     <li>Tecla "p" : para pentagono;</li>
     <li>Tecla "r" : para retangulo;</li>
