@@ -29,12 +29,12 @@
   Tecla "-"; 
   <br>
 
-  Tecla para deletar a figura com foco ou a ultima figura da lista:
+ Tecla para deletar a figura com foco ou a ultima figura da lista:
 
   <li>Tecla "d";</li>
 
- 
-  <ul> Tecla para adicionar figuras:
+ Tecla para adicionar figuras:
+  <ul> 
     <li>Tecla "e" : para ellipes;</li>
     <li>Tecla "p" : para pentagono;</li>
     <li>Tecla "r" : para retangulo;</li>
