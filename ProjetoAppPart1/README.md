@@ -4,12 +4,12 @@
 
   Teclas para mudar a cor do contorno: 
 
-  Tecla "1" , "2", "3";
-  <br>
+  <ul>
+       <li> Tecla "1" , "2", "3"; </li>
+  </ul>
 
   Teclas para mudar a cor do fundo: 
 
-  Tecla "4", "5", "6";
    <ul>
        <li> Tecla "4", "5", "6"; </li>
   </ul>
@@ -50,7 +50,8 @@
   </ul>
   
 <h2> COMANDOS VIA MOUSE </h2>
+  <ul>
+        <li>Clique esquerdo para selecionar figura e atribuir o foco;</li>
+        <li>Pressionar o botao esquerdo e arrastar a figura para deslocar;</li>
+  </ul>
 
-Clique esquerdo para selecionar figura e atribuir o foco;
-<br>
-Pressionar o botao esquerdo e arrastar a figura para deslocar;
