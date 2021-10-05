@@ -94,32 +94,45 @@ class ProjetoFrame extends JFrame{
 					}	
 					//Inicia propriedade de aumento ou diminuição da figura foco
 					if(evt.getKeyChar() == '+') {		
-						focus.w = focus.w + 10;
-						focus.h = focus.h + 10;
+						if (focus != null){
+							focus.w = focus.w + 10;
+							focus.h = focus.h + 10;
+						}
 					}					
 					else if(evt.getKeyChar() == '-') {		
-						focus.w = focus.w - 10;
-						focus.h = focus.h - 10;
+						if(focus != null && (focus.w > 40 || focus.h > 40)){
+							focus.w = focus.w - 10;
+							focus.h = focus.h - 10;
+						}
+						
 					}					
 					
 					//Inicia propriedade de movimentar a figura foco com as setas
 					if(evt.getKeyCode() == 37){
-                        focus.x-=10;
+						if (focus != null){
+							focus.x-=10;
+						}
                     }
                     else if(evt.getKeyCode() == 38){
-                        focus.y-=10;
+						if (focus != null){
+							focus.y-=10;
+						}
                     }
                     else if(evt.getKeyCode() == 39){
-                        focus.x+=10;
+						if (focus != null){
+							focus.x+=10;
+						}
                     }
                     else if(evt.getKeyCode() == 40){
-                        focus.y+=10;
+						if (focus != null){
+							focus.y+=10;
+						}
                     }
 					//Deleta a figura
 					if(figs.size() != 0){
 						if(evt.getKeyChar() == 'd') {	
 							if(figs.size() != 0){						
-								figs.remove(figs.size() - 1);
+								figs.remove(focus);
 								repaint();
 							}
 						}
@@ -153,22 +166,23 @@ class ProjetoFrame extends JFrame{
 		this.addMouseListener (
             new MouseAdapter() {
                 public void mousePressed (MouseEvent evt) {
-                focus = null;
-				int x = evt.getX();
-				int y = evt.getY();
-					
-				for (Figure fig: figs) {
-					if (fig.clicked(x,y)) { 				
-						focus = fig; 
-						repaint();
-						figs.add(focus);
-						figs.remove(focus);
+					focus = null;
+					int x = evt.getX();
+					int y = evt.getY();
 						
-						
-						break;
+					for (Figure fig: figs){
+						if (fig.clicked(x, y)){
+							focus = fig;
+							figs.remove(fig);
+							figs.add(fig);
+							repaint();
+							break;
+						}
+						else{
+							focus = null;
+							repaint();
+						}
 					}
-		
-				}
 				} 
             }
 			);	
@@ -177,8 +191,8 @@ class ProjetoFrame extends JFrame{
 				public void mouseDragged (MouseEvent evt) {
 					for (Figure fig: figs){
 						if (focus == fig) { 
-							focus.x = evt.getX() - focus.w;
-							focus.y = evt.getY() - focus.h;
+							focus.x = evt.getX() - focus.w/2;
+							focus.y = evt.getY() - focus.h/2;
 							repaint();								
 						}
 					}
