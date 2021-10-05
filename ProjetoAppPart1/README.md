@@ -34,7 +34,7 @@
         <li>Tecla "-";</li>
    </ul>
 
- Tecla para deletar a figura com foco ou a ultima figura da lista:
+ Tecla para deletar a figura com foco :
  
  <ul>
   <li>Tecla "d";</li>
