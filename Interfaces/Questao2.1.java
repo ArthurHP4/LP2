@@ -14,12 +14,12 @@ Objetos representativos com a interface "Bateria":
 
 Segunda Interface:
 
-interface Open{
+interface Openable{
     void open(boolean open);
     void closed(boolean closed);
 }
 
-Objetos representativos com a interface "Open":
+Objetos representativos com a interface "Openable":
 
 1)Janela
 2)Armário
