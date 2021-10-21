@@ -1,11 +1,11 @@
 Primeira interface:
 
-interface Bateria{
+interface Power{
     void energia(int pow);
     void tempoRestante(int hora, int minuto);
 }
 
-Objetos representativos com a interface "Bateria":
+Objetos representativos com a interface "Power":
 
 1)Celular
 2)Notebook
