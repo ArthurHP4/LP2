@@ -14,7 +14,7 @@ Objetos representativos com a interface "Bateria":
 
 Segunda Interface:
 
-interface Openable{
+interface Open{
     void open(boolean open);
     void closed(boolean closed);
 }
