@@ -12,6 +12,7 @@ import java.awt.event.MouseMotionAdapter;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import figures.*;
+import ivisible.*;
 
 class ProjetoApp{
 	public static void main (String[] args){
@@ -24,8 +25,8 @@ class ProjetoApp{
 class ProjetoFrame extends JFrame{
 	ArrayList<Figure> figs = new ArrayList<Figure>();
     Random rand = new Random();
-	Figure focus = null;
-	Point pontaMouse = null;
+	private Figure focus = null;
+	private Point pontaMouse = null;
 
 	public ProjetoFrame (){
 		this.addWindowListener(
@@ -69,28 +70,23 @@ class ProjetoFrame extends JFrame{
 					int x = pontaMouse.x;
 					int y = pontaMouse.y;
 					int w = 80;
-					int h = 50;
-					
+					int h = 50;					
 					//Inicio Eventos teclado
 					if(evt.getKeyChar() == 'r') {	
                         figs.add(new Rect(x,y,w,h,Color.black,Color.white));
 						focus=figs.get(figs.size() - 1);
-
 					}
 					else if(evt.getKeyChar() == 'e') {	
                         figs.add(new Ellipse(x,y,w,h,Color.black,Color.white));
 						focus=figs.get(figs.size() - 1);
-
 					}
 					else if(evt.getKeyChar() == 'p') {		
 						figs.add(new Pentagono(x,y,w,h,Color.black,Color.white));
 						focus=figs.get(figs.size() - 1);
-
 					}					
 					else if(evt.getKeyChar() == 't') {	
 						figs.add(new Triangulo(x,y,w,h,Color.black,Color.white));
 						focus=figs.get(figs.size() - 1);
-
 					}	
 					//Inicia propriedade de aumento ou diminuição da figura foco
 					if(evt.getKeyChar() == '+') {		
