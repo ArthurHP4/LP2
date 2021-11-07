@@ -3,7 +3,7 @@ package figures;
 import java.awt.*;
 
 public class Pentagono extends Figure{
-
+	private int x1[], y1[];
 	public Pentagono(int x,int y,int w,int h,Color cor1,Color cor2){
 		super(x,y,w,h,cor1,cor2);
 		
