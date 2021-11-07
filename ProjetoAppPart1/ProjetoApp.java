@@ -23,10 +23,11 @@ class ProjetoApp{
 }
 
 class ProjetoFrame extends JFrame{
-	ArrayList<Figure> figs = new ArrayList<Figure>();
+	private ArrayList<Figure> figs = new ArrayList<Figure>();
     Random rand = new Random();
-	private Figure focus = null;
-	private Point pontaMouse = null;
+	Figure focus = null;
+	Point pontaMouse = null;
+    private int x,y, w,h;
 
 	public ProjetoFrame (){
 		this.addWindowListener(
