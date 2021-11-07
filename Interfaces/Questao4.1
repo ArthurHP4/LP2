@@ -1,0 +1,21 @@
+O problema da herança múltipla é que duas classes podem definir maneiras diferentes de fazer a mesma coisa, e a subclasse não pode escolher qual escolher.
+
+public abstract class Animal {
+  public abstract void fazerBarulho();
+}
+
+public class Cachorro extends Animal {
+  public void fazerBarulho() {
+    System.out.println("AuAu!");
+  }
+}
+
+public class Gato extends Animal {
+  public void fazerBarulho() {
+    System.out.println("Miau!");
+  }
+}
+
+public class filhote extends Gato,Cachorro{
+....
+}
