@@ -174,7 +174,6 @@ class ProjetoFrame extends JFrame{
                 public void mousePressed (MouseEvent evt) {
 					pontaMouse = evt.getPoint();
                     focus = null;
-                    buttonSelected = null;
                     for (Figure fig: figs) {
                         if (fig.clicked(pontaMouse.x, pontaMouse.y)) {
                             focus = fig;
@@ -190,7 +189,37 @@ class ProjetoFrame extends JFrame{
                             buttonSelected = but;
                         }
                     }
-                    repaint();	
+					if(pontaMouse.x > 70 || pontaMouse.y > 200){
+						for (int i=0; i< buts.size(); i++) {																	
+							if ((focus == null) && (buttonSelected != null)){
+									if (buttonSelected == buts.get(0)) {
+										Figure fig = new Rect(pontaMouse.x,pontaMouse.y, 80,50,Color.black,Color.white); 																                                                    
+										figs.add(fig); 
+										focus = fig;
+										buttonSelected = null;
+									}
+									else if (buttonSelected == buts.get(1)) {
+										Figure fig = new Ellipse(pontaMouse.x,pontaMouse.y, 80,50,Color.black,Color.white); 
+										figs.add(fig);
+										focus = fig;
+										buttonSelected = null;
+									}
+									else if (buttonSelected == buts.get(2)) {
+										Figure fig = new Triangulo(pontaMouse.x,pontaMouse.y, 80,50,Color.black,Color.white);
+										figs.add(fig); 
+										focus = fig;
+										buttonSelected = null;
+									}
+									else if (buttonSelected == buts.get(3)) {
+										Figure fig = new Pentagono(pontaMouse.x,pontaMouse.y, 80,50, Color.black,Color.white);
+										figs.add(fig); 
+										focus = fig;
+										buttonSelected = null;
+									}
+							}
+						}
+					}
+					repaint();
 				} 
             }
 			);	
@@ -217,26 +246,18 @@ class ProjetoFrame extends JFrame{
 	public void paint (Graphics g){
 		super.paint(g);
         for (Figure fig: this.figs) {
-            fig.paint(g);	
-			
+            fig.paint(g,false);			
             if (fig ==  focus){
                 Graphics2D g2d = (Graphics2D) g;
-                g2d.setPaint(Color.red);
-				g2d.drawRect(fig.x-2, fig.y-2, fig.w+4,fig.h+4);							
-                g2d.setPaint(Color.black);
+				fig.paint(g,true);	
              }
-        }
-		
-
+        }		
         for (Button but: this.buts) {
-            but.paint(g);
+            but.paint(g,false);
 			if (but ==  buttonSelected){
                 Graphics2D g2d = (Graphics2D) g;
-                g2d.setPaint(Color.red);                
-				g2d.drawRect(30, 30+ but.idx * 40, 40, 40);
-				g2d.setPaint(Color.black);
+				but.paint(g,true);
              }
-			
         }
     }
 		
