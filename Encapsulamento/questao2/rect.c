@@ -25,7 +25,4 @@ void rect_print (Rect* this)
 {
     printf("Retangulo de tamanho (%d,%d) na posicao (%d,%d).\n",this->w, this->h, this->x, this->y);
 }
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Secu
+
