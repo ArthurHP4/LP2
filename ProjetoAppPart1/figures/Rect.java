@@ -7,12 +7,18 @@ public class Rect extends Figure{
 		super(x,y,w,h,cor1,cor2);
     }
    
-    public void paint(Graphics g) {
+    public void paint(Graphics g,boolean focus) {
 		Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(cor1);
-		g2d.fillRect(x, y, w, h);  
-		g2d.setColor(cor2);
-		g2d.drawRect(x, y, w, h);
-
+		if(focus == false){
+			g2d.setColor(cor1);
+			g2d.fillRect(x, y, w, h);  
+			g2d.setColor(cor2);
+			g2d.drawRect(x, y, w, h);
+		}
+		else{
+			 g2d.setPaint(Color.red);
+			 g2d.drawRect(this.x-2, this.y-2, this.w+4,this.h+4);							
+             g2d.setPaint(Color.black);
+		}
     }
 }
