@@ -230,6 +230,13 @@ class ProjetoFrame extends JFrame{
 
         for (Button but: this.buts) {
             but.paint(g);
+			if (but ==  buttonSelected){
+                Graphics2D g2d = (Graphics2D) g;
+                g2d.setPaint(Color.red);                
+				g2d.drawRect(30, 30+ but.idx * 40, 40, 40);
+				g2d.setPaint(Color.black);
+             }
+			
         }
     }
 		
