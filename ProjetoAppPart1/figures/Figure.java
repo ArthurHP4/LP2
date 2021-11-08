@@ -25,6 +25,11 @@ public abstract class Figure implements IVisible, Serializable{
 	
     public abstract void paint (Graphics g);   
 	
+    public void drag (int distanceX, int distanceY) {
+        this.x += distanceX;
+        this.y += distanceY;
+    }
+    
     public boolean clicked (int x, int y) {
         return (this.x<=x && x<=this.x+this.w && this.y<=y && y<=this.y+this.h);
     }
