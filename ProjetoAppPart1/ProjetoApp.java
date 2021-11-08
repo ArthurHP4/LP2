@@ -24,12 +24,21 @@ class ProjetoApp{
 
 class ProjetoFrame extends JFrame{
 	private ArrayList<Figure> figs = new ArrayList<Figure>();
+	private ArrayList<Button> buts = new ArrayList<Button>();
+
     Random rand = new Random();
 	Figure focus = null;
 	Point pontaMouse = null;
+	Button buttonSelected = null;
+
     private int x,y, w,h;
 
 	public ProjetoFrame (){
+		buts.add(new Button(0, new Rect(50,60, 30,30, Color.GRAY,Color.LIGHT_GRAY)));
+        buts.add(new Button(1, new Ellipse(50,110, 30,30, Color.GRAY, Color.LIGHT_GRAY)));
+        buts.add(new Button(2, new Triangulo(50,160, 0,0,Color.GRAY, Color.LIGHT_GRAY)));
+        buts.add(new Button(3, new Pentagono(50,225, 30, 1, Color.GRAY,Color.LIGHT_GRAY )));
+		
 		this.addWindowListener(
 			new WindowAdapter(){
 				public void windowClosing (WindowEvent e){
@@ -163,39 +172,43 @@ class ProjetoFrame extends JFrame{
 		this.addMouseListener (
             new MouseAdapter() {
                 public void mousePressed (MouseEvent evt) {
-					focus = null;
-					int x = evt.getX();
-					int y = evt.getY();
-						
-					for (Figure fig: figs){
-						if (fig.clicked(x, y)){
-							focus = fig;
-							figs.remove(fig);
-							figs.add(fig);
-							repaint();
-							break;
-						}
-						else{
-							focus = null;
-							repaint();
-						}
-					}
+					pontaMouse = evt.getPoint();
+                    focus = null;
+                    buttonSelected = null;
+                    for (Figure fig: figs) {
+                        if (fig.clicked(pontaMouse.x, pontaMouse.y)) {
+                            focus = fig;
+                        }
+                    }
+                    if (focus != null) {
+                        figs.remove(focus);
+                        figs.add(focus); 
+                    }
+                    repaint();
+                    for (Button but: buts) {
+                        if (but.clicked(pontaMouse.x, pontaMouse.y)) {
+                            buttonSelected = but;
+                        }
+                    }
+                    repaint();	
 				} 
             }
 			);	
-			this.addMouseMotionListener(
+			
+		this.addMouseMotionListener(
 			new MouseMotionAdapter(){
 				public void mouseDragged (MouseEvent evt) {
-					for (Figure fig: figs){
-						if (focus == fig) { 
-							focus.x = evt.getX() - focus.w/2;
-							focus.y = evt.getY() - focus.h/2;
-							repaint();								
-						}
-					}
+				if (focus != null) {
+                        int dx = evt.getX() - pontaMouse.x;
+                        int dy = evt.getY() - pontaMouse.y;
+                        focus.drag(dx, dy);
+                        repaint();
+                    }
+                    pontaMouse = evt.getPoint();				
 				}				
 			}
-			);
+		);
+		
 		this.setTitle("Projeto App");
 		this.setSize(550,550);	
 		this.getContentPane().setBackground(Color.BLACK);		
@@ -212,6 +225,11 @@ class ProjetoFrame extends JFrame{
 				g2d.drawRect(fig.x-2, fig.y-2, fig.w+4,fig.h+4);							
                 g2d.setPaint(Color.black);
              }
+        }
+		
+
+        for (Button but: this.buts) {
+            but.paint(g);
         }
     }
 		
