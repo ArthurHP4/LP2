@@ -8,15 +8,21 @@ public class Pentagono extends Figure{
 		super(x,y,w,h,cor1,cor2);
 		
 	}
-	public void paint (Graphics g) {
+	public void paint (Graphics g,boolean focus) {
         Graphics2D g2d = (Graphics2D) g;
         int x1[] = {this.x, this.x + this.w/2, this.x + this.w, this.x + (int)(this.w * 0.75), this.x + this.w/4};
         int y1[] = {this.y + this.h /2, this.y, this.y + this.h/2, this.y + this.h, this.y + this.h};
-
-        g2d.setColor(cor1);
-        g2d.fillPolygon(x1, y1, 5); 
-        g2d.setColor(cor2);
-        g2d.drawPolygon(x1, y1, 5);
+		if(focus == false){
+			g2d.setColor(cor1);
+			g2d.fillPolygon(x1, y1, 5); 
+			g2d.setColor(cor2);
+			g2d.drawPolygon(x1, y1, 5);
+		}
+		else{
+			 g2d.setPaint(Color.red);
+			 g2d.drawRect(this.x-2, this.y-2, this.w+4,this.h+4);							
+             g2d.setPaint(Color.black);
+		}
     }
 
 }
