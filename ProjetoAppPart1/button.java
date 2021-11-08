@@ -1,4 +1,4 @@
-mport ivisible.IVisible;
+import ivisible.IVisible;
 import figures.Figure;
 import java.awt.*;
 
