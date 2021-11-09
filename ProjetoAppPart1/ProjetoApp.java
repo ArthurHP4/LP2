@@ -13,8 +13,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import figures.*;
 import ivisible.*;
-
 import java.io.*;
+
 class ProjetoApp{
 	public static void main (String[] args){
 		ProjetoFrame frame = new ProjetoFrame();
@@ -47,7 +47,7 @@ class ProjetoFrame extends JFrame{
             this.figs = (ArrayList<Figure>) o.readObject();
             o.close();
         } catch (Exception x) {
-            System.out.println("ERRO! Ao abrir o arquivo");
+            System.out.println("ERRO!!! <Em abrir o arquivo>");
         }
         
 
@@ -67,6 +67,7 @@ class ProjetoFrame extends JFrame{
             }
 
         );
+		
 		this.addKeyListener(
 			new KeyAdapter(){
 				public void keyPressed (KeyEvent evt) {
@@ -209,35 +210,34 @@ class ProjetoFrame extends JFrame{
                             buttonSelected = but;
                         }
                     }
+					
 					if(pontaMouse.x > 70 || pontaMouse.y > 200){
-						for (int i=0; i< buts.size(); i++) {																	
-							if ((focus == null) && (buttonSelected != null)){
-									if (buttonSelected == buts.get(0)) {
-										Figure fig = new Rect(pontaMouse.x,pontaMouse.y, 80,50,Color.black,Color.white); 																                                                    
-										figs.add(fig); 
-										focus = fig;
-										buttonSelected = null;
-									}
-									else if (buttonSelected == buts.get(1)) {
-										Figure fig = new Ellipse(pontaMouse.x,pontaMouse.y, 80,50,Color.black,Color.white); 
-										figs.add(fig);
-										focus = fig;
-										buttonSelected = null;
-									}
-									else if (buttonSelected == buts.get(2)) {
-										Figure fig = new Triangulo(pontaMouse.x,pontaMouse.y, 80,50,Color.black,Color.white);
-										figs.add(fig); 
-										focus = fig;
-										buttonSelected = null;
-									}
-									else if (buttonSelected == buts.get(3)) {
-										Figure fig = new Pentagono(pontaMouse.x,pontaMouse.y, 80,50, Color.black,Color.white);
-										figs.add(fig); 
-										focus = fig;
-										buttonSelected = null;
-									}
-							}
-						}
+						if ((focus == null) && (buttonSelected != null)){
+								if (buttonSelected == buts.get(0)) {
+									Figure fig = new Rect(pontaMouse.x,pontaMouse.y, 80,50,Color.black,Color.white); 																                                                    
+									figs.add(fig); 
+									focus = fig;
+									buttonSelected = null;
+								}
+								else if (buttonSelected == buts.get(1)) {
+									Figure fig = new Ellipse(pontaMouse.x,pontaMouse.y, 80,50,Color.black,Color.white); 
+									figs.add(fig);
+									focus = fig;
+									buttonSelected = null;
+								}
+								else if (buttonSelected == buts.get(2)) {
+									Figure fig = new Triangulo(pontaMouse.x,pontaMouse.y, 80,50,Color.black,Color.white);
+									figs.add(fig); 
+									focus = fig;
+									buttonSelected = null;
+								}
+								else if (buttonSelected == buts.get(3)) {
+									Figure fig = new Pentagono(pontaMouse.x,pontaMouse.y, 80,50, Color.black,Color.white);
+									figs.add(fig); 
+									focus = fig;
+									buttonSelected = null;
+								}
+						}			
 					}
 					repaint();
 				} 
