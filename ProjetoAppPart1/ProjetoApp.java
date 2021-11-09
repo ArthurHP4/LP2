@@ -14,6 +14,7 @@ import java.awt.event.WindowEvent;
 import figures.*;
 import ivisible.*;
 
+import java.io.*;
 class ProjetoApp{
 	public static void main (String[] args){
 		ProjetoFrame frame = new ProjetoFrame();
@@ -39,14 +40,32 @@ class ProjetoFrame extends JFrame{
         buts.add(new Button(2, new Triangulo(50,160, 0,0,Color.GRAY, Color.LIGHT_GRAY)));
         buts.add(new Button(3, new Pentagono(50,225, 30, 1, Color.GRAY,Color.LIGHT_GRAY )));
 		
-		this.addWindowListener(
-			new WindowAdapter(){
-				public void windowClosing (WindowEvent e){
-					System.exit(0);
-				}
-			}
-		);
-		
+		try {
+            FileInputStream f = new FileInputStream("proj.svg");
+            ObjectInputStream o = new ObjectInputStream(f);
+            this.figs = (ArrayList<Figure>) o.readObject();
+            o.close();
+        } catch (Exception x) {
+            System.out.println("ERRO!!! <Em abrir o arquivo>");
+        }
+        
+
+        this.addWindowListener (
+            new WindowAdapter() {
+                public void windowClosing (WindowEvent e) {
+                    try {
+                        FileOutputStream f = new FileOutputStream("proj.svg");
+                        ObjectOutputStream o = new ObjectOutputStream(f);
+                        o.writeObject(figs);
+                        o.flush();
+                        o.close();
+                    } catch (Exception x) {
+                    }
+                    System.exit(0);
+                }
+            }
+
+        );
 		this.addKeyListener(
 			new KeyAdapter(){
 				public void keyPressed (KeyEvent evt) {
