@@ -23,6 +23,7 @@ class ProjetoApp{
 	
 }
 
+@SuppressWarnings("unchecked")
 class ProjetoFrame extends JFrame{
 	private ArrayList<Figure> figs = new ArrayList<Figure>();
 	private ArrayList<Button> buts = new ArrayList<Button>();
@@ -35,18 +36,18 @@ class ProjetoFrame extends JFrame{
     private int x,y, w,h;
 
 	public ProjetoFrame (){
-		buts.add(new Button(0, new Rect(50,60, 30,30, Color.GRAY,Color.LIGHT_GRAY)));
-        buts.add(new Button(1, new Ellipse(50,110, 30,30, Color.GRAY, Color.LIGHT_GRAY)));
-        buts.add(new Button(2, new Triangulo(50,160, 0,0,Color.GRAY, Color.LIGHT_GRAY)));
-        buts.add(new Button(3, new Pentagono(50,225, 30, 1, Color.GRAY,Color.LIGHT_GRAY )));
+		buts.add(new Button(0, new Rect(0,0, 0,0, Color.GRAY,Color.LIGHT_GRAY)));
+        buts.add(new Button(1, new Ellipse(0,0, 0,0, Color.GRAY, Color.LIGHT_GRAY)));
+        buts.add(new Button(2, new Triangulo(0,0, 0,0,Color.GRAY, Color.LIGHT_GRAY)));
+        buts.add(new Button(3, new Pentagono(0,0, 0, 0, Color.GRAY,Color.LIGHT_GRAY )));
 		
 		try {
-            FileInputStream f = new FileInputStream("proj.svg");
+            FileInputStream f = new FileInputStream("proj.bin");
             ObjectInputStream o = new ObjectInputStream(f);
             this.figs = (ArrayList<Figure>) o.readObject();
             o.close();
         } catch (Exception x) {
-            System.out.println("ERRO!!! <Em abrir o arquivo>");
+            System.out.println("ERRO! Ao abrir o arquivo");
         }
         
 
@@ -54,7 +55,7 @@ class ProjetoFrame extends JFrame{
             new WindowAdapter() {
                 public void windowClosing (WindowEvent e) {
                     try {
-                        FileOutputStream f = new FileOutputStream("proj.svg");
+                        FileOutputStream f = new FileOutputStream("proj.bin");
                         ObjectOutputStream o = new ObjectOutputStream(f);
                         o.writeObject(figs);
                         o.flush();
