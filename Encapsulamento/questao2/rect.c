@@ -1,28 +1,29 @@
-#include "rect.h"
-typedef struct Rect
-{
-    int x, y;
-    int w, h;
-};
+#include <stdio.h>
+#include <stdlib.h>
 
-Rect* rect_new (void)
-{
-    Rect* this  = malloc(sizeof(Rect));
-    this->x = 0;
-    this->y = 0;
-    this->w = 30;
-    this->h = 60;
-    return this;
+typedef struct {
+	int x, y;
+    int width, height;
+} Rect;
+
+void rect_drag (Rect* this, int dx, int dy) {
+	this->x += dx;
+	this->y += dy;
 }
 
-void rect_drag (Rect* this, int dx, int dy)
-{
-    this->x = this->x + dx;
-    this->y = this->y + dy;
+float rect_area (Rect* this) {
+    return (this->width * this->height);
 }
 
-void rect_print (Rect* this)
-{
-    printf("Retangulo de tamanho (%d,%d) na posicao (%d,%d).\n",this->w, this->h, this->x, this->y);
+void rect_print (Rect* this) {
+    printf("Retangulo de tamanho (%d,%d) na nova posicao (%d,%d).\n", this->width, this->height, this->x, this->y);
+    printf("Retangulo tem area (%.1f)\n\n", rect_area(this));
 }
 
+Rect* rect_new (int x, int y, int width, int height) {
+    Rect* this = malloc(sizeof(Rect));
+    this->x = x;
+    this->y = y;
+    this->width = width;
+    this->height = height;
+}
