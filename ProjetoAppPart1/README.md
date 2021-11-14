@@ -1,4 +1,4 @@
-<h1> Manual de intrução para o uso do progama feito para o "Projeto 1/2" </h1>
+<h1> Manual de intrução para o uso do progama feito para o "Projeto 2/2" </h1>
 
  <h2> Menu de botões</h2>
     Para criar figuras agora tambem é possivel atraves do menu onde é necessário que o usuário escolha qual figura deseja criar e depois clicar no quadro onde deseja que a figura seja criada.
