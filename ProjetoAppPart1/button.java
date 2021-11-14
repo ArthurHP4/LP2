@@ -28,7 +28,7 @@ public class Button implements IVisible {
         g2d.setColor(focused ? Color.GRAY : Color.LIGHT_GRAY);
         g2d.fillRect(SPC, SPC+this.idx*DIM, DIM, DIM);
         g2d.setColor(Color.BLUE);
-        g2d.drawRect(SPC, SPC+this.idx*DIM, DIM, DIM);        
+        g2d.drawRect(SPC, SPC+this.idx*DIM, DIM, DIM);
         this.fig.paint(g,false);
         
     }
